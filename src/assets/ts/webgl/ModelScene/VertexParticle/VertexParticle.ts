@@ -131,6 +131,7 @@ export class VertexParticle {
     this.positionY = Math.cos(this.deltaTime) * 0.01
 
     let i = 0
+    
 
     for (let p = 0; p < this.PARTICLE_COUNT; p++) {
       this.particlePositions.array[i] =
