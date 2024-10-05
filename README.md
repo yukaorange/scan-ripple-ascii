@@ -11,12 +11,12 @@ ASCII エフェクトをエフェクトコンポーザーで統合しました�
 
 # deploy
 
-- [here](https://kirifuda-interaction-challenge.vercel.app/)
+- [here](https://scan-ripple-ascii.vercel.app/)
 
 ![ogp](https://github.com/user-attachments/assets/e646f063-6855-4941-9f91-c36567185a36)
 
 
 # comment
 - Three.jsを使用して3Dシーンを作成し、カスタムシェーダーを用いてASCIIエフェクト、スキャンラインエフェクト、リップルエフェクトを実装しました。
-EffectComposerを使用して複数のポストプロセッシングエフェクトを組み合わせ、統合することに成功しました。
+EffectComposerを使用して複数のポストプロセッシングエフェクトを統合しました。
 - I implemented ASCII, scan line, and ripple effects using Three.js and custom shaders, integrating them with EffectComposer for a visually striking 3D scene.
