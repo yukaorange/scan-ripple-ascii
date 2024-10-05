@@ -2,12 +2,12 @@
   "site": {
     "name": "takaoka-portfolio",
     "name_separate": " | ",
-    "domain": "takaoka.com",
+    "domain": "https://scan-ripple-ascii.vercel.app",
     "favicon": "/favicon.svg",
     "description": "portfolio site.",
     "ogp": {
       "type": "website",
-      "image": "/ogp.jpg"
+      "image": "https://scan-ripple-ascii.vercel.app/ogp.jpg"
     },
     "twitter": {
       "card": "summary_large_image",
