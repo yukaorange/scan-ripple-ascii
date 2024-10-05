@@ -33,17 +33,16 @@ export default class Canvas {
   private isTouchDown: boolean = false
   private clock = new THREE.Clock()
 
-  //pages
-  private modelScene: ModelScene | null = null
-
   //three.js objects
   private renderer: THREE.WebGLRenderer | null
   private scene: THREE.Scene | null
   private camera: THREE.PerspectiveCamera | null
+  private cameraForDepth: THREE.PerspectiveCamera | null
   private controls: OrbitControls | null
   private pane: DebugPane = DebugPane.getInstance()
   private paneParams: { [key: string]: any } | null = null
 
+  private modelScene: ModelScene | null = null
   private backLight: THREE.PointLight | null = null
   private fillLight: THREE.PointLight | null = null
   private keyLight: THREE.PointLight | null = null
@@ -63,6 +62,7 @@ export default class Canvas {
     this.renderer = null
     this.scene = null
     this.camera = null
+    this.cameraForDepth = null
     this.controls = null
     this.finalComposer = null
 
@@ -140,7 +140,15 @@ export default class Canvas {
 
     this.camera = new THREE.PerspectiveCamera(fov, aspect, near, far)
 
-    this.camera.position.z = 5
+    this.camera.position.z = 6
+
+    // this.cameraForDepth = this.camera.clone()
+    // this.cameraForDepth.near = 1
+    // this.cameraForDepth.far = 10
+    // this.cameraForDepth.position.x = 0
+    // this.cameraForDepth.position.y = 5
+    // this.cameraForDepth.position.z = 0
+    // this.cameraForDepth.lookAt(new THREE.Vector3(0, 0, 0))
   }
 
   private createControls() {
@@ -148,6 +156,17 @@ export default class Canvas {
       this.camera as THREE.PerspectiveCamera,
       this.renderer?.domElement as HTMLElement
     )
+
+    this.controls.minAzimuthAngle = -Math.PI / 2
+    this.controls.maxAzimuthAngle = Math.PI / 2
+
+    this.controls.minPolarAngle = Math.PI / 4
+    this.controls.maxPolarAngle = (Math.PI * 3) / 4
+
+    this.controls.minDistance = 5
+    this.controls.maxDistance = 7
+    this.controls.enableDamping = true
+    this.controls.dampingFactor = 0.05
   }
 
   /**modelScene */
@@ -162,9 +181,9 @@ export default class Canvas {
   private createComposer() {
     this.finalComposer = new FinalComposer({
       renderer: this.renderer as THREE.WebGLRenderer,
-
       scene: this.scene as THREE.Scene,
-      camera: this.camera as THREE.PerspectiveCamera
+      camera: this.camera as THREE.PerspectiveCamera,
+      cameraForDepth: this.cameraForDepth as THREE.PerspectiveCamera
     })
   }
 

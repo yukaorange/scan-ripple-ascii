@@ -28,7 +28,7 @@ void main() {
 
   gl_PointSize = pointSize;
 
-  vec4 addedLights = vec4(0.1, 0.1, 0.1, 1.0);
+  vec4 addedLights = vec4(0.1, 0.16, 0.1, 1.0);
 
   for(int l = 0; l < NUM_POINT_LIGHTS; l++) {
     float dist = distance(pointLights[l].position, modelViewPosition.xyz);

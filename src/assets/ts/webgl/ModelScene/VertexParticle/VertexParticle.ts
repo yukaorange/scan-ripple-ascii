@@ -34,7 +34,7 @@ export class VertexParticle {
   private positionY = 0
   private deltaTime = 0
 
-  private PARTICLE_COUNT = 200
+  private PARTICLE_COUNT = 150
   private PARTICLE_DEPTH = 3
   private PARTICLE_SPEED = 5
 
@@ -131,7 +131,6 @@ export class VertexParticle {
     this.positionY = Math.cos(this.deltaTime) * 0.01
 
     let i = 0
-    
 
     for (let p = 0; p < this.PARTICLE_COUNT; p++) {
       this.particlePositions.array[i] =

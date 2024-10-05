@@ -105,6 +105,7 @@ export class Model {
     const size = box.getSize(new THREE.Vector3())
 
     model.position.y = -size.y / 2
+    // model.position.z = -1.2
   }
 
   private applyTexture(model: THREE.Group, material: THREE.Material) {
@@ -161,7 +162,9 @@ export class Model {
   updateY(y = 0) {}
 
   update({ time }: { time: number }) {
-    // this.mesh!.rotation.x = Math.PI / 10
-    // this.mesh!.rotation.y -= time * 0.8
+    if (this.mesh) {
+      // this.mesh.rotation.x = -Math.PI / 10
+      this.mesh.rotation.y -= time * 0.8
+    }
   }
 }

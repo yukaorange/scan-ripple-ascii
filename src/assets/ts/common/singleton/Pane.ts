@@ -7,17 +7,17 @@ export default class DebugPane {
 
   private constructor() {
     this.pane = new Pane({
-      // expanded: false
+      expanded: false
     })
 
     this.params = {
       alpha: 1,
-      backLightIntensity: 600,
-      backLightDistance: 7,
-      fillLightIntensity: 500,
+      backLightIntensity: 900,
+      backLightDistance: 8,
+      fillLightIntensity: 800,
       fillLightDistance: 8,
-      keyLightIntensity: 200,
-      keyLightDistance: 6,
+      keyLightIntensity: 600,
+      keyLightDistance: 8,
 
       
     }

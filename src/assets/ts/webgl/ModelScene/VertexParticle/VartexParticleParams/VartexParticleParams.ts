@@ -12,8 +12,8 @@ export class VertexParticleParams {
     this.uniforms = THREE.UniformsUtils.merge([
       THREE.UniformsLib['lights'],
       {
-        pointSize: { value: 2.0 },
-        decayModifier: { value: 1.0 }
+        pointSize: { value: 1.0 },
+        decayModifier: { value: 10.0 }
       }
     ])
 
