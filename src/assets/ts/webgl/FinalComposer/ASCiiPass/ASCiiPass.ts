@@ -1,9 +1,9 @@
 import * as THREE from 'three'
-import vertexShader from '@ts/webgl/shaders/vertex-ASCii.glsl'
-import fragmentShader from '@ts/webgl/shaders/fragment-ASCii.glsl'
+import vertexShader from '@ts/webgl/shaders/vertex-ascii.glsl'
+import fragmentShader from '@ts/webgl/shaders/fragment-ascii.glsl'
 import { ShaderPass } from 'three/examples/jsm/Addons'
 import Assets from '@ts/common/singleton/Assets'
-import { cameraNear } from 'three/examples/jsm/nodes/Nodes'
+
 
 interface IUpdateParams {
   time: number
